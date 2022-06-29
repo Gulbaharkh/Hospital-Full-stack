@@ -1,0 +1,14 @@
+﻿@model List<SliderIntro>
+
+@foreach (SliderIntro sliderIntro in Model)
+{
+    <div class="intro-box">
+        <div class="intro-text">
+            <h3>@sliderIntro.Title</h3>
+            <p>@sliderIntro.Description</p>
+        </div>
+        <span class="icon"><i class="far fa-hospital"></i></span>
+        <a 
+           href="#">Read more</a>
+    </div>
+}

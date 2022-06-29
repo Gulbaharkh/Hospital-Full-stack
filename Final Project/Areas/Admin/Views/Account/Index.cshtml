@@ -1,0 +1,48 @@
+﻿@model List<Final_Project.Identity.Models.AppUser>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">User</h4>
+                <a asp-controller="Account" asp-action="Create" class="btn btn-success">Create</a>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Fulname
+                                </th>
+                                <th>
+                                    Setting
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Final_Project.Identity.Models.AppUser item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.Fullname
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">
+                                            <i class="mdi mdi-table-edit"></i>
+                                        </a>
+                                        <a class="btn btn-danger " asp-action="Delete" asp-route-id="@item.Id">
+                                            <i class="mdi mdi-delete-sweep"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

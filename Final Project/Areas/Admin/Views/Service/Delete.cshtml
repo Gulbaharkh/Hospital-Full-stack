@@ -1,0 +1,20 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h1>@Model.Title</h1>
+        <div>
+            @Model.Description
+        </div>
+        <div>
+            <a asp-action="Index" class="my-3 btn btn-secondary">Go Back</a>
+            <form method="post">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+
+</div>

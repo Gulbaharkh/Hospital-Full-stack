@@ -1,0 +1,14 @@
+﻿@model ContactInfo
+
+<div class="col-md-3">
+    <p><span><i class="fas fa-map-marker-alt"></i></span> @Model.Address, <br> @Model.AddressDetail</p>
+</div>
+<div class="col-md-3">
+    <p><span><i class="fas fa-phone"></i></span> <a href="tel://1234567920">@Model.PhoneNumber</a></p>
+</div>
+<div class="col-md-3">
+    <p><span><i class="fas fa-envelope"></i></span> <a href="mailto:info@yoursite.com">@Model.MailAddress</a></p>
+</div>
+<div class="col-md-3">
+    <p><span><i class="fas fa-globe"></i></span> <a href="#">@Model.Website</a></p>
+</div>

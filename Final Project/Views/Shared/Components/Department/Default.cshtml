@@ -1,0 +1,32 @@
+﻿@model List<Department>
+
+@foreach (Department department in Model)
+{
+    <div class="department-wrap animate-box fadeInUp animated-fast">
+        <div class="department-img col-md-6" style="background-image:url('@Url.Content($"~/img/slider/{@department.Image}")')"></div>
+        <div class="department-info col-md-6">
+            <div class="department-name">
+                <h2><a href="departments-single.html">@department.DepartmentTitle</a></h2>
+                <p>@department.Description</p>
+            </div>
+            <div class="department-info-blocks">
+                <div class="info-block">
+                    <h2><a href="~/html/doctors.html">@department.DoctorName</a></h2>
+                    <span>@department.DepartmentName</span>
+                </div>
+                <div class="info-block">
+                    <h2><a href="~/html/pricing.html">Department Info</a></h2>
+                    <span>@department.DepartmentInfo</span>
+                </div>
+                <div class="info-block">
+                    <h2><a href="~/html/doctors.html">Find a Doctor</a></h2>
+                    <span>@department.FindDoctor</span>
+                </div>
+                <div class="info-block">
+                    <h2><a href="~/html/appointment.html">Request an appointment</a></h2>
+                    <span>@department.Appointment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

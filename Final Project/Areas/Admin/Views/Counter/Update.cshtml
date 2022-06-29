@@ -1,0 +1,40 @@
+﻿@model Counter
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create</h4>
+                <form asp-action="Update" class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label asp-for="Item"></label>
+                        <input asp-for="Item" class="form-control">
+                        <span class="text-danger" asp-validation-for="Item"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Count"></label>
+                        <textarea asp-for="Count"></textarea>
+                        <span class="text-danger" asp-validation-for="Count"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a class="btn btn-light" asp-action="Index">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script
+{
+    <partial name="_ValidationPartial" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}

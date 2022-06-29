@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Final_Project</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Migrations\20210828005551_FirstMigrationSlider.cs" />
+    <Compile Include="Migrations\20210828005551_FirstMigrationSlider.Designer.cs" />
+    <Compile Include="Migrations\20210828005950_CreateSliderIntroTable.cs" />
+    <Compile Include="Migrations\20210828005950_CreateSliderIntroTable.Designer.cs" />
+    <Compile Include="Migrations\20210828010132_CreateAboutTable.cs" />
+    <Compile Include="Migrations\20210828010132_CreateAboutTable.Designer.cs" />
+    <Compile Include="Migrations\20210828010339_CreateDoctorTable.cs" />
+    <Compile Include="Migrations\20210828010339_CreateDoctorTable.Designer.cs" />
+    <Compile Include="Migrations\20210828010438_CreateSocialMediaTable.cs" />
+    <Compile Include="Migrations\20210828010438_CreateSocialMediaTable.Designer.cs" />
+    <Compile Include="Migrations\20210828010806_ChangeSocialMediaTable.cs" />
+    <Compile Include="Migrations\20210828010806_ChangeSocialMediaTable.Designer.cs" />
+    <Compile Include="Migrations\20210828011139_CreateServiceTable.cs" />
+    <Compile Include="Migrations\20210828011139_CreateServiceTable.Designer.cs" />
+    <Compile Include="Migrations\20210828011248_CreateBlogTable.cs" />
+    <Compile Include="Migrations\20210828011248_CreateBlogTable.Designer.cs" />
+    <Compile Include="Migrations\20210828011441_CreateDepartmentTable.cs" />
+    <Compile Include="Migrations\20210828011441_CreateDepartmentTable.Designer.cs" />
+    <Compile Include="Migrations\20210828011611_CreateConsultationTable.cs" />
+    <Compile Include="Migrations\20210828011611_CreateConsultationTable.Designer.cs" />
+    <Compile Include="Migrations\20210828011737_CreateCounterTable.cs" />
+    <Compile Include="Migrations\20210828011737_CreateCounterTable.Designer.cs" />
+    <Compile Include="Migrations\20210828011919_CreatePreferenceTable.cs" />
+    <Compile Include="Migrations\20210828011919_CreatePreferenceTable.Designer.cs" />
+    <Compile Include="Migrations\20210828012028_CreateContactInfoTable.cs" />
+    <Compile Include="Migrations\20210828012028_CreateContactInfoTable.Designer.cs" />
+    <Compile Include="Migrations\20210829022844_ChangeCounterTable.cs" />
+    <Compile Include="Migrations\20210829022844_ChangeCounterTable.Designer.cs" />
+    <Compile Include="Migrations\20210829132429_ChangeDoctorTable.cs" />
+    <Compile Include="Migrations\20210829132429_ChangeDoctorTable.Designer.cs" />
+    <Compile Include="Migrations\20210829134708_CreateAboutImgTable.cs" />
+    <Compile Include="Migrations\20210829134708_CreateAboutImgTable.Designer.cs" />
+    <Compile Include="Migrations\20210829135216_CreatePreferenceImgTable.cs" />
+    <Compile Include="Migrations\20210829135216_CreatePreferenceImgTable.Designer.cs" />
+    <Compile Include="Migrations\20210829171601_ChangeAboutTable.cs" />
+    <Compile Include="Migrations\20210829171601_ChangeAboutTable.Designer.cs" />
+    <Compile Include="Migrations\20210829171733_ChangePreferenceTable.cs" />
+    <Compile Include="Migrations\20210829171733_ChangePreferenceTable.Designer.cs" />
+    <Compile Include="Migrations\20210829172113_ChangePreferenceImgTable.cs" />
+    <Compile Include="Migrations\20210829172113_ChangePreferenceImgTable.Designer.cs" />
+    <Compile Include="Migrations\20210829172404_ChangeAgainPreferenceImgTable.cs" />
+    <Compile Include="Migrations\20210829172404_ChangeAgainPreferenceImgTable.Designer.cs" />
+    <Compile Include="Migrations\20210829192816_ChangeSliderTable.cs" />
+    <Compile Include="Migrations\20210829192816_ChangeSliderTable.Designer.cs" />
+    <Compile Include="Migrations\20210830025247_ChangeBlogTable.cs" />
+    <Compile Include="Migrations\20210830025247_ChangeBlogTable.Designer.cs" />
+    <Compile Include="Migrations\20210830204405_ChangeAgainSliderTable.cs" />
+    <Compile Include="Migrations\20210830204405_ChangeAgainSliderTable.Designer.cs" />
+    <Compile Include="Migrations\20210831013748_ChangeAgainDoctorTable.cs" />
+    <Compile Include="Migrations\20210831013748_ChangeAgainDoctorTable.Designer.cs" />
+    <Compile Include="Migrations\20210831164201_ChangeConsultationTable.cs" />
+    <Compile Include="Migrations\20210831164201_ChangeConsultationTable.Designer.cs" />
+    <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\.vscode\settings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="ViewComponents\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Final Project.Identity\Final Project.Identity.csproj" />
+  </ItemGroup>
+
+</Project>

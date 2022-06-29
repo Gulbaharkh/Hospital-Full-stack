@@ -1,0 +1,14 @@
+﻿@model List<Preference>
+
+@foreach (Preference preference in Model)
+  {
+    <div class="col-lg-6 col-md-12 col-xs-12">
+        <div class="features animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+            <span class="icon text-center"><i class="fas fa-user-md"></i></span>
+            <div class="features-text">
+                <h3>@preference.Title</h3>
+                <p>@preference.Description</p>
+            </div>
+        </div>
+    </div>
+  }

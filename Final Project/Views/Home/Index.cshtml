@@ -1,0 +1,284 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Index";
+    var count = 0;
+ }
+<div class="slider">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @foreach (var slider in Model.Sliders)
+            {
+                <div class="carousel-item @((count == 0)? "active":"")">
+                    <div class="slider-item" style="background-image: url(/img/slider/@slider.ImageURL); width: 100%; background-repeat: no-repeat; background-size: cover; min-height: 800px;">
+                        <div class="container">
+                            <div class="row">
+                                <div data-aos="fade-up" data-aos-duration="500" class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text aos-init aos-animate">
+                                    <div class="slider-text">
+                                        <h1>@slider.Title</h1>
+                                        <h2>
+                                            @Html.Raw(@slider.Description)
+                                        </h2>
+                                        <p><a class="btn btn-primary btn-lg btn-make" href="/html/appointment.html"><span>Make an Appointment</span></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                @(count++);
+            }
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<div id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="intro animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                    @foreach (var intro in Model.SliderIntros)
+                    {
+                        <div class="intro-box">
+                            <div class="intro-text">
+                                <h3>@intro.Title</h3>
+                                <p>@Html.Raw(@intro.Description)</p>
+                            </div>
+                            <span class="icon"><i class="@intro.Icon"></i></span>
+                            <a href="#">Read more</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="about-img">
+                    <img src="/img/xabout.jpg.pagespeed.ic.Fgk92-nbFh.webp" style="width: 100%;" alt="">
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-md-7">
+                <h2>About Medicare</h2>
+                <p>
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                    blind texts.
+                </p>
+                <div class="accordion">
+                    @for (int i = 0; i < Model.Abouts.Count(); i++)
+                    {
+                        <div class="accordion__header @((i == 0)? "is-active":"")">
+                            <h2>@Model.Abouts[i].Title</h2>
+
+                            <span class="accordion__toggle"></span>
+                        </div>
+                        <div class="accordion__body @((i == 0)? "is-active":"")">
+                            <p>
+                                @Html.Raw(@Model.Abouts[i].Description)
+                            </p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="appointment">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-2">
+                <div class="appointment-area">
+                    <h2 class="line-block">Make an appointment</h2>
+                    <p class="btn btn-app">
+                        <a href="/html/appointment.html"><span>Book an Appointment<i class="far fa-calendar-alt" aria-hidden="true"></i></span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="services">
+    <div class="container">
+        <div class="row animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+            <div class="col-md-6 text-center services-heading">
+                <h2>Our Services</h2>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var service in @Model.Services)
+            {
+                <div class="col-lg-4 col-md-6 animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                    <div class="services">
+                        <span class="icon"><i class="@service.Icon"></i></span>
+                        <div class="services-text">
+                            <h3><a href="#">@service.Title</a></h3>
+                            <p>
+                                @Html.Raw(service.Description)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+
+    </div>
+</div>
+<div id="preference">
+    <div class="preference">
+        <div class="img" style="background-image: url(/img/@Model.PreferenceImgs.Image)">
+        </div>
+        <div class="preference-text">
+            <div class="preference-heading aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                <h2>What makes us best?</h2>
+            </div>
+            <div class="row">
+                @foreach (var preference in Model.Preferences)
+                {
+                    <div class="col-lg-6 col-md-12 col-xs-12">
+                        <div class="features animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="icon text-center"><i class="@preference.Icon"></i></span>
+                            <div class="features-text">
+                                <h3>@preference.Title</h3>
+                                <p>@Html.Raw(preference.Description)</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="doctor">
+    <div class="container">
+        <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+            <div class="col-md-6 text-center doctor-heading">
+                <h2>Well experienced doctors</h2>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            </div>
+        </div>
+        <div class="row animate-box">
+            @foreach (var doctor in @Model.Doctors)
+            {
+                <div class="col-md-3 col-sm-6 col-xs-12 text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                    <div class="doctor">
+                        <div class="img" style="background-image: url(/img/slider/@doctor.Image);">
+                        </div>
+                        <div class="doctor-info">
+                            <h3><a href="#">@doctor.Name</a></h3>
+                            <span>@Html.Raw(doctor.Department)</span>
+                            <ul class="doctor-social">
+                                <li><a href="@doctor.Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="@doctor.Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="@doctor.Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="@doctor.Instagram"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+<div id="counter" class="counter-section animated"
+     style="background-image: url(/img/slider/ximg_bg_2.jpg.pagespeed.ic.oy6InjPz6E.webp); background-position: 50% 50%;"
+     data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="col-md-10 center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+            <div class="row">
+                @foreach (var counter in Model.Counters)
+                {
+                    <div class="col-md-3 col-sm-6 text-center">
+                        <div class="counter-info">
+                            <span class="icon"><i class="@counter.Icon"></i></span>
+                            <span class="counter">@counter.Count</span>
+                            <span class="counter-name">@counter.Item</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div id="blog">
+    <div class="container">
+        <div class="row animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+            <div class="col-md-6 text-center blog-heading">
+                <h2>Recent blog</h2>
+                <p>
+                    Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab
+                    aliquam dolor eius.
+                </p>
+            </div>
+        </div>
+        <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+            @foreach (var blog in Model.Blogs)
+            {
+                <div class="col-md-4">
+                    <div class="blog-content">
+                        <a href="" class="blog-img" style="background-image: url(/img/@blog.Image);">
+                            @*<p class="date">
+                            <span>@blog.Date</span>
+                            <span>@blog.Date</span>
+                        </p>*@
+                        </a>
+                        <div class="blog-text">
+                            <h3><a href="blog.html">@blog.Title</a></h3>
+                            <p>@Html.Raw(@blog.Text)</p>
+                            <p><a href="#">Read more <i class="fas fa-chevron-right"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+            @*@{
+                var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+            }*@
+<div id="consultation" style="background-image: url(/img/slider/ximg_bg_6.jpg.pagespeed.ic.3lEgMuESZQ.webp);"
+     data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 content animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                <div id="time" class="date-counter text-center">
+                    <h2>We offer <strong>Free Consultation</strong></h2>
+                    <h3>By Dr. <strong>@Model.Consultations.Doctor</strong></h3>
+                    <p class="count-area">
+                        <span class="count-item" id="days">@Model.Consultations.Date </span>
+                        <span class="count-item" id="hours">@Model.Consultations.Date</span>
+                        <span class="count-item" id="minutes">@Model.Consultations.Date </span>
+                        <span class="count-item" id="seconds">@Model.Consultations.Date</span>
+                    </p>
+
+                    <p><strong>Limited offer, Hurry Up!</strong></p>
+                    <p>
+                        <a id="btn-submit" href="/html/appointment.html" class="btn btn-primary btn-lg btn-appointment">
+                            Book an Appointment <i class="far fa-calendar-alt"
+                                                   aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

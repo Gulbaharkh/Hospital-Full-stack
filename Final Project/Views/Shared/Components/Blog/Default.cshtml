@@ -1,0 +1,19 @@
+﻿@model List<Blog>
+
+@foreach (Blog blogs in Model)
+            {
+                <div class="col-md-4">
+                    <div class="blog-content">
+                        <a asp-controller="Blog" asp-action="Index" class="blog-img" style="background-image: url('@Url.Content($"~/img/{@blogs.Image}")')">
+                            <p class="date">
+                                @blogs.Date
+                            </p>
+                        </a>
+                        <div class="blog-text">
+                            <h3><a asp-controller="Blog" asp-action="Index">@blogs.Title</a></h3>
+                            <p>@blogs.Text</p>
+                            <p><a href="#">Read more <i class="fas fa-chevron-right"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+            }

@@ -1,0 +1,116 @@
+﻿@model ServiceViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="slides">
+    <div style="background-image: url(/img/slider/ximg_bg_1.jpg.pagespeed.ic.gttODn5s4U.webp);" class="slide-heading">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center headings animated fadeInUp">
+                    <div class="slider-text-inner">
+                        <h1>Medicare <strong>Departments</strong></h1>
+                        <h2>html5 Bootstrap Templates Made by <a href="">prisma.com</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="appointment">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-2">
+                <div class="appointment-area">
+                    <h2 class="line-block">Make an appointment</h2>
+                    <p class="btn-appointment">
+                        <a href="/html/appointment.html"><span>Book an Appointment<i class="far fa-calendar-alt" aria-hidden="true"></i></span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="services">
+    <div class="container">
+        <div class="row animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+            <div class="col-md-6 text-center services-heading">
+                <h2>Our Services</h2>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var service in @Model.Services)
+            {
+                <div class="col-lg-4 col-md-6 animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                    <div class="services">
+                        <span class="icon"><i class="@service.Icon"></i></span>
+                        <div class="services-text">
+                            <h3><a href="#">@service.Title</a></h3>
+                            <p>
+                                @service.Description
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+
+    </div>
+</div>
+<div id="preference">
+    <div class="preference">
+        <div class="img" style="background-image: url(/img/ximg_bg_3.jpg.pagespeed.ic.WB3q4HCwKf.webp);">
+        </div>
+        <div class="preference-text">
+            <div class="preference-heading aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                <h2>What makes us best?</h2>
+            </div>
+            <div class="row">
+                @foreach (var preference in Model.Preferences)
+                {
+                    <div class="col-lg-6 col-md-12 col-xs-12">
+                        <div class="features animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="icon text-center"><i class="@preference.Icon"></i></span>
+                            <div class="features-text">
+                                <h3>@preference.Title</h3>
+                                <p>@preference.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="consultation" style="background-image: url(/img/slider/ximg_bg_6.jpg.pagespeed.ic.3lEgMuESZQ.webp);"
+     data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 content animate-box aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                <div class="date-counter text-center">
+                    <h2>We offer <strong>Free Consultation</strong></h2>
+                    <h3>By Dr. <strong>@Model.Consultations.Doctor</strong></h3>
+                    <p class="count-area">
+                        <span class="count-item" id="days">@Model.Consultations.Date </span>
+                        <span class="count-item" id="hours">@Model.Consultations.Date</span>
+                        <span class="count-item" id="minutes">@Model.Consultations.Date </span>
+                        <span class="count-item" id="seconds">@Model.Consultations.Date</span>
+                    </p>
+                    <p><strong>Limited offer, Hurry Up!</strong></p>
+                    <p>
+                        <a href="/html/appointment.html" class="btn btn-primary btn-lg btn-appointment">
+                            Book an Appointment <i class="far fa-calendar-alt"
+                                                   aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

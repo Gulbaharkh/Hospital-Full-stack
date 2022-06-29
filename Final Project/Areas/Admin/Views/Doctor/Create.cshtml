@@ -1,0 +1,66 @@
+﻿@model Doctor
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create</h4>
+                <form asp-action="Create" class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Photo">Photo</label>
+                        <input asp-for="Photo" accept="image/*" class="form-control">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Department">Description</label>
+                        <textarea asp-for="Department" id="editor" class="form-control"></textarea>
+                        <span class="text-danger" asp-validation-for="Department"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Facebook">Facebook</label>
+                        <textarea asp-for="Facebook" id="editor" class="form-control"></textarea>
+                        <span class="text-danger" asp-validation-for="Facebook"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Twitter">Twitter</label>
+                        <textarea asp-for="Twitter" id="editor" class="form-control"></textarea>
+                        <span class="text-danger" asp-validation-for="Twitter"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Linkedin">Linkedin</label>
+                        <textarea asp-for="Linkedin" id="editor" class="form-control"></textarea>
+                        <span class="text-danger" asp-validation-for="Linkedin"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Instagram">Instagram</label>
+                        <textarea asp-for="Instagram" id="editor" class="form-control"></textarea>
+                        <span class="text-danger" asp-validation-for="Instagram"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a class="btn btn-light" asp-action="Index">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script
+{
+    <partial name="_ValidationPartial" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}

@@ -1,0 +1,32 @@
+﻿@model List<Department>
+
+@foreach (Department department in Model)
+{
+    <div class="department-wrap animate-box fadeInUp animated-fast">
+        <div class="department-img col-md-6" style="background-image:url('@Url.Content($"~/img/slider/{@department.Image}")')"></div>
+        <div class="department-info col-md-6">
+            <div class="department-name">
+                <h2><a asp-controller="Department" asp-action="Index" asp-route-id="@department.Id">@department.DepartmentTitle</a></h2>
+                <p>@department.Description</p>
+            </div>
+            <div class="department-info-blocks">
+                <div class="info-block">
+                    <h2><a asp-controller="Department" asp-action="Index" asp-route-id="@department.Id">@department.DoctorName</a></h2>
+                    <span>@department.DepartmentName</span>
+                </div>
+                <div class="info-block">
+                    <h2><a asp-controller="Department" asp-action="Index" asp-route-id="@department.Id">Department Info</a></h2>
+                    <span>@department.DepartmentInfo</span>
+                </div>
+                <div class="info-block">
+                    <h2><a asp-controller="Department" asp-action="Index" asp-route-id="@department.Id">Find a Doctor</a></h2>
+                    <span>@department.FindDoctor</span>
+                </div>
+                <div class="info-block">
+                    <h2><a asp-controller="Department" asp-action="Index" asp-route-id="@department.Id">Request an appointment</a></h2>
+                    <span>@department.Appointment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

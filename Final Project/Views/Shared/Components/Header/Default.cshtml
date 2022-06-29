@@ -1,0 +1,126 @@
+﻿@model ContactInfo
+    <!-- NavMenu Area Start -->
+    <nav role='navigation'>
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li>
+                    <a asp-controller="Home" asp-action="Index" class="active">Home</a>
+                </li>
+                <li>
+                    <a asp-controller="Doctor" asp-action="Index">Doctors</a>
+                </li>
+                <li>
+                    <a asp-controller="Service" asp-action="Index">Services</a>
+                </li>
+                <li class="nav-item drop-menu">
+                    <a asp-controller="Home" asp-action="Index" class="navbar-link nav-link">
+                        Departments
+                    </a>
+                    <ul>
+                        <li><a href="/html/pricing.html">Plasetic Surgery Department</a></li>
+                        <li><a href="/html/pricing.html">Dental Department</a></li>
+                        <li><a href="/html/pricing.html">Psychological Department</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a asp-controller="Blog" asp-action="Index">Blog</a>
+                </li>
+                <li>
+                    <a asp-controller="Contact" asp-action="Index">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- NavMenu Area Start -->
+    <!-- Header Area Start -->
+    <header>
+        <!-- Header Area Start -->
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="top">
+                            <div class="row">
+                                <div class="d-flex two-items">
+                                    <div class="col-md-6">
+                                        <div id="hospital-logo">
+                                            <a href="/html/index.html">
+                                                <i class="fas fa-stethoscope"></i>Medi<span>care</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-wrap">
+                                        <div class="col-md-4 col-xs-3 col-lg-6">
+                                            <div class="number">
+                                                <span class="icon"><i class="fas fa-phone"></i></span>
+                                                <p><a href="#">111-222-333</a><br><a href="#">99-222-333</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xs-3 col-lg-6">
+                                            <div class="location">
+                                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                                <p><a href="#">88 Route West 21th Street, Suite 721 New York NY 10016</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Area End -->
+        <!-- Main Menu Start -->
+        <div id="navbarScroll" class="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-xs-8 display-menu">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul id="click" class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Doctor" class="nav-link">Doctors</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Service" asp-action="Index" class="nav-link">Services</a>
+                                    </li>
+                                    <li class="nav-item drop-menu">
+                                        <a asp-controller="Department" asp-action="Index" class="navbar-link nav-link">
+                                            Departments
+                                        </a>
+                                        <ul>
+                                            <li><a href="/html/pricing.html">Plasetic Surgery Department</a></li>
+                                            <li><a href="/html/pricing.html">Dental Department</a></li>
+                                            <li><a href="/html/pricing.html">Psychological Department</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Blog" asp-action="Index" class="nav-link">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Contact" asp-action="Index" class="nav-link">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="button">
+                            <p class="btn btn-app">
+                                <a href="/html/appointment.html"><span>Make an Appointment<i class="far fa-calendar-alt"></i></span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Menu End -->
+    </header>
